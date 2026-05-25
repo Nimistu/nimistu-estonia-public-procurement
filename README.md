@@ -92,13 +92,23 @@ Living dataset. The underlying register data refreshes daily; this package is
 regenerated and re-published on a recurring schedule. The `version` and `created` fields
 in `datapackage.json` record each release.
 
-## License & citation
+## License & attribution
 
 Released under [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 (CC-BY-SA-4.0). See [`LICENSE`](LICENSE).
 
-> Estonia Public Procurement Contracts (2024–present) — Nimistu MTÜ, derived from the
+**Attribution is required.** Under CC-BY-SA-4.0, any use, republication or derivative —
+including hosting on a third-party portal — must credit **Nimistu MTÜ** with a link to
+**<https://nimistu.ee>** and keep the same licence. Please use:
+
+> Estonia Public Procurement Contracts — [Nimistu MTÜ](https://nimistu.ee), derived from the
 > Estonian Public Procurement Register and the Estonian Business Register. CC-BY-SA-4.0.
+
+HTML for web display:
+
+```html
+Source: <a href="https://nimistu.ee">Nimistu MTÜ</a> · CC-BY-SA-4.0
+```
 
 ## Contact
 

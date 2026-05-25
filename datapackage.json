@@ -7,6 +7,9 @@
   "version": "1.0.0",
   "created": "2026-05-25T00:00:00Z",
   "homepage": "https://nimistu.ee",
+  "attribution": "Nimistu MTÜ (https://nimistu.ee)",
+  "attributionRequired": true,
+  "citation": "Estonia Public Procurement Contracts — Nimistu MTÜ, https://nimistu.ee — CC-BY-SA-4.0. Under the licence, any use or redistribution must credit \"Nimistu MTÜ\" with a link to https://nimistu.ee and keep the same licence.",
   "countryCode": "EE",
   "keywords": ["procurement", "estonia", "public spending", "contracts", "riigihanked"],
   "licenses": [
