@@ -1,7 +1,8 @@
 {
-  "name": "estonia-public-procurement-2024",
-  "title": "Estonia Public Procurement Contracts 2024",
-  "description": "Awarded public procurement contracts in Estonia during calendar year 2024 that disclose a contract value, sourced from the Estonian Public Procurement Register (riigihanked.riik.ee) and cross-referenced with the Estonian Business Register (äriregister). One row per awarded supplier. Published as a Frictionless Fiscal Data Package by Nimistu MTÜ.",
+  "name": "estonia-public-procurement",
+  "title": "Estonia Public Procurement Contracts (2024–present)",
+  "description": "Awarded public procurement contracts in Estonia from 2024 onward that disclose a contract value, sourced from the Estonian Public Procurement Register (riigihanked.riik.ee) and cross-referenced with the Estonian Business Register (äriregister). One row per awarded supplier. A living dataset, regenerated from the register's daily-updated data. Published as a Frictionless Fiscal Data Package by Nimistu MTÜ.",
+  "temporal": { "start": "2024-01-01" },
   "profile": "tabular-data-package",
   "version": "1.0.0",
   "created": "2026-05-25T00:00:00Z",
@@ -35,9 +36,9 @@
   ],
   "resources": [
     {
-      "name": "estonia-public-procurement-2024",
+      "name": "estonia-public-procurement",
       "profile": "tabular-data-resource",
-      "path": "data/estonia-public-procurement-2024.csv",
+      "path": "data/estonia-public-procurement.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",      "schema": {

@@ -1,8 +1,9 @@
--- Estonia public procurement 2024 — OpenSpending export.
--- Value-disclosed awarded contracts (all public buyers), one row per winner.
+-- Estonia public procurement (2024-present, live) — OpenSpending export.
+-- Value-disclosed awarded contracts (all public buyers), one row per winner,
+-- from 2024-01-01 onward (the eForms era with full field coverage); no end cap.
 -- Source: nimistu `procurements` table (riigihanke register eForms feed),
 -- winner cross-referenced to the Estonian Business Register (äriregister).
--- Run on the nimistu prod DB:  psql "$DATABASE_URL" -f scripts/export.sql > data/estonia-public-procurement-2024.csv
+-- Run on the nimistu prod DB:  psql "$DATABASE_URL" -f scripts/export.sql > data/estonia-public-procurement.csv
 COPY (
   SELECT
     p.notice_id,
@@ -35,7 +36,7 @@ COPY (
     p.source_url
   FROM procurements p
   LEFT JOIN companies cw ON cw.id = p.winner_company_id
-  WHERE extract(year from p.award_date) = 2024
+  WHERE p.award_date >= DATE '2024-01-01'
     AND p.total_amount IS NOT NULL
   ORDER BY p.award_date, p.notice_id, p.winner_reg_code
 ) TO STDOUT WITH (FORMAT csv, HEADER true);

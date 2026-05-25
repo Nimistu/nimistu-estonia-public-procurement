@@ -1,35 +1,40 @@
-# Estonia Public Procurement Contracts 2024
+# Estonia Public Procurement Contracts (2024–present)
 
-A [Frictionless Fiscal Data Package](https://specs.frictionlessdata.io/fiscal-data-package/)
-of awarded public procurement contracts in Estonia during calendar year **2024**,
-published by **[Nimistu MTÜ](https://nimistu.ee)** — an Estonian non-profit operating
-public-registry transparency infrastructure.
+A **living** [Frictionless Fiscal Data Package](https://specs.frictionlessdata.io/fiscal-data-package/)
+of awarded public procurement contracts in Estonia from **2024 onward**, published by
+**[Nimistu MTÜ](https://nimistu.ee)** — an Estonian non-profit operating public-registry
+transparency infrastructure.
 
 Each row is one awarded supplier on a public procurement contract. Every supplier is
 **cross-referenced with the Estonian Business Register (äriregister)** — the value this
-dataset adds over the raw procurement feed.
+dataset adds over the raw procurement feed. The dataset is regenerated from the
+register's daily-updated data, so new awards appear continuously.
 
 ## At a glance
 
 | | |
 |---|---|
-| Contracts (value-disclosed) | **7,263** |
-| Contracting authorities | **704** |
-| Distinct suppliers | **2,585** |
-| Total disclosed value | **≈ €3.85 billion** |
-| Suppliers matched to äriregister | **6,823 (94%)** |
-| Period | 2024-01-01 – 2024-12-31 (award date) |
+| Contracts (value-disclosed) | **17,455** |
+| Contracting authorities | **1,219** |
+| Distinct suppliers | **4,332** |
+| Total disclosed value | **≈ €10.2 billion** |
+| Suppliers matched to äriregister | **16,450 (94%)** |
+| Coverage | 2024-01-01 → present (ongoing) |
 | Currency | EUR |
 | License | CC-BY-SA-4.0 |
+
+By year: 2024 — 7,263 contracts (€3.85B) · 2025 — 7,812 (€5.37B) · 2026 — 2,380 and counting.
 
 ## Scope
 
 - **All public buyers** — state agencies, local governments, foundations and other
   contracting authorities that publish in the Estonian procurement register.
 - **Awarded contracts only** (contract-award notices), one row per winning supplier.
-- **Value-disclosed only** — this package contains the awards that publish a contract
-  value. Roughly 31% of 2024 awards do not disclose a value and are *excluded* here
-  (they remain browsable on nimistu.ee).
+- **2024 onward** — the eForms-era feed, which carries full field coverage (procedure
+  type, number of tenders, register reference). No end date; the dataset grows as new
+  awards are published.
+- **Value-disclosed only** — only awards that publish a contract value are included.
+  Awards without a disclosed value are excluded here (they remain browsable on nimistu.ee).
 
 ## Sources & methodology
 
@@ -41,8 +46,8 @@ dataset adds over the raw procurement feed.
    `winner_in_ariregister` and `winner_status` carry the result.
 
 The package is generated from Nimistu's `procurements` table with
-[`scripts/export.sql`](scripts/export.sql). It is validated with
-[`frictionless`](https://framework.frictionlessdata.io/) before publication:
+[`scripts/export.sql`](scripts/export.sql) and validated with
+[`frictionless`](https://framework.frictionlessdata.io/) before each release:
 
 ```bash
 frictionless validate datapackage.json
@@ -68,8 +73,8 @@ See [`datapackage.json`](datapackage.json) for the full Table Schema. Key fields
 
 ## Known limitations
 
-- **Value coverage** — only awards with a disclosed value are included (~69% of all 2024
-  awards). Use the count + total as a lower bound on total procurement activity.
+- **Value coverage** — only awards with a disclosed value are included. Treat the count
+  and total as a lower bound on total procurement activity.
 - **Notice-level attributes** — `register_number`, `procedure_type` and `source_url` are
   captured at the procurement (notice) level and apply to all winner rows of that notice;
   for multi-lot procurements they describe the procurement, not the individual lot.
@@ -78,20 +83,22 @@ See [`datapackage.json`](datapackage.json) for the full Table Schema. Key fields
 - **Foreign suppliers** — suppliers without an Estonian registry entry are unmatched
   (`winner_in_ariregister = false`); their registry code is the foreign identifier as
   published.
+- **Pre-2024** — earlier procurement (TED-format, 2017–2023) is not included here because
+  it lacks the procedure/tender/reference fields; it may be added as a separate resource.
 
 ## Update frequency
 
-Living dataset. Nimistu refreshes the underlying register data daily; this package is
-regenerated from the latest data. The `version` and `created` fields in
-`datapackage.json` record each release.
+Living dataset. The underlying register data refreshes daily; this package is
+regenerated and re-published on a recurring schedule. The `version` and `created` fields
+in `datapackage.json` record each release.
 
 ## License & citation
 
 Released under [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 (CC-BY-SA-4.0). See [`LICENSE`](LICENSE).
 
-> Estonia Public Procurement Contracts 2024 — Nimistu MTÜ, derived from the Estonian
-> Public Procurement Register and the Estonian Business Register. CC-BY-SA-4.0.
+> Estonia Public Procurement Contracts (2024–present) — Nimistu MTÜ, derived from the
+> Estonian Public Procurement Register and the Estonian Business Register. CC-BY-SA-4.0.
 
 ## Contact
 
@@ -99,4 +106,4 @@ Nimistu MTÜ · <info@nimistu.ee> · <https://nimistu.ee>
 
 ## Update history
 
-- **2026-05-25** — v1.0.0, initial release (2024 awards, value-disclosed).
+- **2026-05-25** — initial release; live coverage 2024-01-01 onward, value-disclosed.
