@@ -1,0 +1,68 @@
+{
+  "name": "estonia-public-procurement-2024",
+  "title": "Estonia Public Procurement Contracts 2024",
+  "description": "Awarded public procurement contracts in Estonia during calendar year 2024 that disclose a contract value, sourced from the Estonian Public Procurement Register (riigihanked.riik.ee) and cross-referenced with the Estonian Business Register (äriregister). One row per awarded supplier. Published as a Frictionless Fiscal Data Package by Nimistu MTÜ.",
+  "profile": "tabular-data-package",
+  "version": "1.0.0",
+  "created": "2026-05-25T00:00:00Z",
+  "homepage": "https://nimistu.ee",
+  "countryCode": "EE",
+  "keywords": ["procurement", "estonia", "public spending", "contracts", "riigihanked"],
+  "licenses": [
+    {
+      "name": "CC-BY-SA-4.0",
+      "title": "Creative Commons Attribution-ShareAlike 4.0",
+      "path": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Nimistu MTÜ",
+      "role": "publisher",
+      "email": "info@nimistu.ee",
+      "path": "https://nimistu.ee"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Estonian Public Procurement Register (riigihangete register)",
+      "path": "https://riigihanked.riik.ee"
+    },
+    {
+      "title": "Estonian Business Register (äriregister)",
+      "path": "https://ariregister.rik.ee"
+    }
+  ],
+  "resources": [
+    {
+      "name": "estonia-public-procurement-2024",
+      "profile": "tabular-data-resource",
+      "path": "data/estonia-public-procurement-2024.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",      "schema": {
+        "fields": [
+          { "name": "notice_id", "type": "string", "title": "Notice ID", "description": "Stable contract-folder identifier (UUID) from the procurement register." },
+          { "name": "register_number", "type": "string", "title": "Register number", "description": "Public reference number in riigihanked.riik.ee." },
+          { "name": "buyer_name", "type": "string", "title": "Contracting authority", "description": "Name of the public buyer.", "columnType": "administrative-classification:generic:label" },
+          { "name": "buyer_reg_code", "type": "string", "title": "Buyer registry code", "description": "Estonian registry code of the contracting authority.", "columnType": "administrative-classification:generic:code" },
+          { "name": "winner_name", "type": "string", "title": "Supplier", "description": "Name of the awarded supplier." },
+          { "name": "winner_reg_code", "type": "string", "title": "Supplier registry code", "description": "Registry code of the awarded supplier (Estonian or foreign)." },
+          { "name": "winner_in_ariregister", "type": "boolean", "title": "Supplier in äriregister", "description": "Whether the supplier was matched to a current entry in the Estonian Business Register." },
+          { "name": "winner_status", "type": "string", "title": "Supplier status", "description": "Current äriregister status of the supplier when matched (e.g. registris)." },
+          { "name": "title", "type": "string", "title": "Contract subject", "description": "Procurement subject / title (Estonian)." },
+          { "name": "cpv_main", "type": "string", "title": "CPV (main)", "description": "Primary Common Procurement Vocabulary code.", "columnType": "functional-classification:generic:code" },
+          { "name": "cpv_all", "type": "string", "title": "CPV (all)", "description": "All CPV codes for the procurement, semicolon-separated." },
+          { "name": "amount", "type": "number", "title": "Contract value", "description": "Awarded contract value.", "columnType": "value" },
+          { "name": "currency", "type": "string", "title": "Currency", "description": "ISO 4217 currency code.", "columnType": "value-currency:code" },
+          { "name": "award_date", "type": "date", "format": "%Y-%m-%d", "title": "Award date", "description": "Contract award / notice date.", "columnType": "date:generic" },
+          { "name": "contract_end_date", "type": "date", "format": "%Y-%m-%d", "title": "Contract end date", "description": "Planned contract end date, when published." },
+          { "name": "procedure_type", "type": "string", "title": "Procedure type (code)", "description": "eForms procurement-procedure-type code." },
+          { "name": "procedure_label", "type": "string", "title": "Procedure type", "description": "Human-readable procurement procedure type." },
+          { "name": "bidder_count", "type": "integer", "title": "Number of tenders", "description": "Number of tenders received." },
+          { "name": "source_url", "type": "string", "format": "uri", "title": "Source URL", "description": "Link to the procurement in riigihanked.riik.ee." }
+        ]
+      }
+    }
+  ]
+}
