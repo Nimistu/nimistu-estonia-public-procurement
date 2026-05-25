@@ -1,0 +1,37 @@
+name: Refresh dataset
+
+# Living dataset: pull the latest export from nimistu.ee weekly, validate it,
+# and commit if the data changed. Uses the built-in GITHUB_TOKEN — no secrets.
+on:
+  schedule:
+    - cron: "0 5 * * 1" # Mondays 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch latest export
+        run: curl -fsSL "https://nimistu.ee/api/opendata/procurement" -o data/estonia-public-procurement.csv
+
+      - name: Validate package
+        run: |
+          pip install --quiet frictionless
+          frictionless validate datapackage.json
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/estonia-public-procurement.csv; then
+            echo "No data change — nothing to commit."
+            exit 0
+          fi
+          git config user.name "nimistu-bot"
+          git config user.email "info@nimistu.ee"
+          git add data/estonia-public-procurement.csv
+          git commit -m "Refresh dataset ($(date -u +%Y-%m-%d))"
+          git push
