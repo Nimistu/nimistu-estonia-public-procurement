@@ -1,5 +1,7 @@
 # Estonia Public Procurement Contracts (2024–present)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21455919.svg)](https://doi.org/10.5281/zenodo.21455919)
+
 A **living** [Frictionless Fiscal Data Package](https://specs.frictionlessdata.io/fiscal-data-package/)
 of awarded public procurement contracts in Estonia from **2024 onward**, published by
 **[Nimistu MTÜ](https://nimistu.ee)** — an Estonian non-profit operating public-registry
@@ -109,6 +111,16 @@ HTML for web display:
 ```html
 Source: <a href="https://nimistu.ee">Nimistu MTÜ</a> · CC-BY-SA-4.0
 ```
+
+## Citation
+
+Archived on Zenodo with a citable DOI. The **concept DOI** below always resolves to the
+latest version:
+
+**DOI: [10.5281/zenodo.21455919](https://doi.org/10.5281/zenodo.21455919)**
+
+> Nimistu MTÜ (2026). *Estonia Public Procurement Contracts (2024–present)* [Data set].
+> Zenodo. https://doi.org/10.5281/zenodo.21455919
 
 ## Contact
 
