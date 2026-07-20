@@ -39,9 +39,9 @@ By year: 2024 — 7,263 contracts (€3.85B) · 2025 — 7,812 (€5.37B) · 202
 ## Sources & methodology
 
 1. **Estonian Public Procurement Register** (riigihangete register,
-   <https://riigihanked.riik.ee>) — the authoritative source. Nimistu ingests the
+   [riigihanked.riik.ee](https://riigihanked.riik.ee)) — the authoritative source. Nimistu ingests the
    register's open-data contract-award feed (eForms format) daily.
-2. **Estonian Business Register** (äriregister, <https://ariregister.rik.ee>) — each
+2. **Estonian Business Register** (äriregister, [ariregister.rik.ee](https://ariregister.rik.ee)) — each
    winning supplier's registry code is matched to its current business-register entry;
    `winner_in_ariregister` and `winner_status` carry the result.
 
@@ -99,7 +99,7 @@ Released under [Creative Commons Attribution-ShareAlike 4.0](https://creativecom
 
 **Attribution is required.** Under CC-BY-SA-4.0, any use, republication or derivative —
 including hosting on a third-party portal — must credit **Nimistu MTÜ** with a link to
-**<https://nimistu.ee>** and keep the same licence. Please use:
+**[nimistu.ee](https://nimistu.ee)** and keep the same licence. Please use:
 
 > Estonia Public Procurement Contracts — [Nimistu MTÜ](https://nimistu.ee), derived from the
 > Estonian Public Procurement Register and the Estonian Business Register. CC-BY-SA-4.0.
@@ -112,7 +112,7 @@ Source: <a href="https://nimistu.ee">Nimistu MTÜ</a> · CC-BY-SA-4.0
 
 ## Contact
 
-Nimistu MTÜ · <info@nimistu.ee> · <https://nimistu.ee>
+Nimistu MTÜ · [info@nimistu.ee](mailto:info@nimistu.ee) · [nimistu.ee](https://nimistu.ee)
 
 ## Update history
 
